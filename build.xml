@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<project name="javaTest" default="compile" basedir="."> 
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+    <target name="compile" depends="clean">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes" includeantruntime="on"/>
+    </target>
+</project>
+
