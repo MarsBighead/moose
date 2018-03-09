@@ -64,6 +64,10 @@ duanp-m02:moose duanp$ java -jar HelloWorld.jar
 Hello, moose!
 ```
 
+## Maven build java
+
+For maven uasage examples, refer to [USAGE](USAGE.md)
+
 ## Reference
 
 -1. [Apply Ant in Java project][ref1]
