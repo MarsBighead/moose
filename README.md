@@ -2,7 +2,7 @@
 
 The project moose is used for study Java/Ant
 
--1. Build with ant
+* Build with ant
 
 ```shell
 duanp-m02:moose duanp$ ant compile
@@ -19,7 +19,7 @@ BUILD SUCCESSFUL
 Total time: 0 seconds
 ```
 
--2. Build and run with ant
+* Build and run with ant
 
 ```shell
 duanp-m02:moose duanp$ ant run
@@ -39,7 +39,7 @@ BUILD SUCCESSFUL
 Total time: 0 seconds
 ```
 
--3. Build jar pacakage, and run it
+* Build jar pacakage, and run it
 
 ```shell
 duanp-m02:moose duanp$ ant jar
@@ -70,6 +70,6 @@ For maven uasage examples, refer to [USAGE](USAGE.md)
 
 ## Reference
 
--1. [Apply Ant in Java project][ref1]
+* [Apply Ant in Java project][ref1]
 
 [ref1]:https://www.cnblogs.com/Donnnnnn/p/7498224.html

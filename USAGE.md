@@ -1,6 +1,8 @@
 # Usage of Maven
 
--1. Initial command line:
+Here are some samples of maven usage in simple java project.
+
+*. Initial command line:
 
 ```shell
 duanp-m02:moose duanp$  mvn archetype:generate -DgroupId=com.hello -DartifactId=mjava  -DinteractiveMode=false -DarchetypeCatalog=internal
@@ -38,7 +40,7 @@ duanp-m02:moose duanp$  mvn archetype:generate -DgroupId=com.hello -DartifactId=
 duanp-m02:moose duanp$ cd  mjava/e
 ```
 
--2. Build .jar pakackage
+* Build .jar pakackage
 
 ```shell
 duanp-m02:mjava duanp$ find . -type f -name "*.jar"
@@ -98,7 +100,7 @@ duanp-m02:mjava duanp$ find . -type f -name "*.jar"
 ./target/mjava-1.0-SNAPSHOT.jar
 ```
 
--3. Run the App
+* Run the App
 
 ```shell
 duanp-m02:classes duanp$ pwd
@@ -107,7 +109,7 @@ duanp-m02:classes duanp$ java com.hello.App
 Hello World!
 ```
 
--4. Modify the package and re-build
+* Modify the package and re-build
 
     Old vs changed java code
 ```java
