@@ -1,6 +1,11 @@
 build
-HelloWorld.jar
-.vscode
-target
-*.class
 *.jar
+.vscode
+
+
+# maven
+target
+.settings
+*.class
+.project
+.classpath
