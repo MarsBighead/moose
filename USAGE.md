@@ -43,10 +43,10 @@ duanp-m02:moose duanp$ cd  mjava/e
 * Build .jar pakackage
 
 ```shell
-duanp-m02:mjava duanp$ find . -type f -name "*.jar"
-duanp-m02:mjava duanp$ ls
+duanp-m02:maven-project duanp$ find . -type f -name "*.jar"
+duanp-m02:maven-project duanp$ ls
 bin     pom.xml src
-duanp-m02:mjava duanp$ mvn clean package
+duanp-m02:maven-project duanp$ mvn clean package
 [INFO] Scanning for projects...
 [INFO]
 [INFO] ------------------------------------------------------------------------
@@ -205,4 +205,22 @@ duanp-m02:mjava duanp$ cd -
 /Users/duanp/project/moose/mjava/target/classes
 duanp-m02:classes duanp$ java com.hello.App
 hello, maven!
+```
+
+Run the programm from jar package
+
+```bash
+duanp-a01:maven-project duanp$ java -jar  target/hello-1.0-SNAPSHOT.jar
+hello, maven!
+```
+
+* Compile and package relevant command line
+
+```bash
+    mvn clean compile
+    mvn clean test
+    mvn clean package
+    mvn clean test
+    mvn clean package
+    java -jar  target/hello-1.0-SNAPSHOT.jar
 ```
