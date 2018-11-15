@@ -10,11 +10,11 @@ public class Contact {
     private Integer age;
     private List<String> phoneNumbers;
 
-    public Contact(String name, int age, List<String> phoneNumbers) {
+    /*public Contact(String name, int age, List<String> phoneNumbers) {
         this.name = name;
         this.age = age;
         this.phoneNumbers = phoneNumbers;
-    }
+    }*/
 
     public String getName() {
         return name;
