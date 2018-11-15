@@ -20,46 +20,40 @@ import com.entity.Contact;
  */
 public class App {
     public String hello(String name){
-
         return "hello, "+name +"!";
-
     }
+
     @SuppressWarnings ("unchecked")
-    public static void main(String [] args){
-        String configPath="config/contact.yaml";
-        if (args.length>0){
-            configPath=args[0];
-           
-        }
-        System.out.println(configPath);
+    public  Contact getContact(String configPath){
+        Contact contact=null;
         try {
             Yaml yaml = new Yaml();
             //Read the config file from the config Path
             InputStream input= new FileInputStream(new File(configPath));
-        
             Map<String,Object> data= (Map<String, Object>) yaml.load(input);
-            //Contact contact= new Contact(name, age, phoneNumbers);
             String name=data.get("name").toString();
             Integer age=Integer.parseInt(data.get("age").toString());
-            //System.out.println(data.get("phoneNumbers").toString());
-           
             List<String>   phoneNumbers= (List<String>) data.get("phoneNumbers");
-            
-            
             //List<String> phoneNumbers=Arrays.asList();
-            Contact contact=new Contact(name, age, phoneNumbers);
-            System.out.printf("Name: %s\nAge: %d\n",contact.getName(), contact.getAge());
-            System.out.println("Phon Numbers:"+contact.getPhoneNumbers());
-            /*for (Object data : yaml.loadAll(input)) {
-                System.out.println(data);
-            }*/
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+            contact=new Contact(name, age, phoneNumbers);
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
         }
+        return contact;
+    }
+    public static void main(String [] args){
+        App app=new App();
+        System.out.println(app.hello("maven"));
+        String configPath="config/contact.yaml";
+        if (args.length>0){
+            configPath=args[0];
+        }
+       
+        Contact contact=app.getContact(configPath);
+        System.out.printf("Name: %s\nAge: %d\n",contact.getName(), contact.getAge());
+        System.out.println("Phon Numbers:"+contact.getPhoneNumbers());
       
-      
-        System.out.println(new App().hello("maven"));
         
        
     }
