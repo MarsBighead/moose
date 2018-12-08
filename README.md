@@ -1,75 +1,11 @@
 # moose
 
-The project moose is used for study Java/Ant
+A learning Java Project which inlcudes code managed by Maven or Ant.
 
-* Build with ant
+## Ant project
 
-```shell
-duanp-m02:moose duanp$ ant compile
-Buildfile: /Users/duanp/project/moose/build.xml
-
-clean:
-   [delete] Deleting directory /Users/duanp/project/moose/build
-
-compile:
-    [mkdir] Created dir: /Users/duanp/project/moose/build/classes
-    [javac] Compiling 1 source file to /Users/duanp/project/moose/build/classes
-
-BUILD SUCCESSFUL
-Total time: 0 seconds
-```
-
-* Build and run with ant
-
-```shell
-duanp-m02:moose duanp$ ant run
-Buildfile: /Users/duanp/project/moose/build.xml
-
-clean:
-   [delete] Deleting directory /Users/duanp/project/moose/build
-
-compile:
-    [mkdir] Created dir: /Users/duanp/project/moose/build/classes
-    [javac] Compiling 1 source file to /Users/duanp/project/moose/build/classes
-
-run:
-     [java] Hello, moose!
-
-BUILD SUCCESSFUL
-Total time: 0 seconds
-```
-
-* Build jar pacakage, and run it
-
-```shell
-duanp-m02:moose duanp$ ant jar
-Buildfile: /Users/duanp/project/moose/build.xml
-
-clean:
-   [delete] Deleting directory /Users/duanp/project/moose/build
-
-compile:
-    [mkdir] Created dir: /Users/duanp/project/moose/build/classes
-    [javac] Compiling 1 source file to /Users/duanp/project/moose/build/classes
-
-run:
-     [java] Hello, moose!
-
-jar:
-      [jar] Building jar: /Users/duanp/project/moose/HelloWorld.jar
-
-BUILD SUCCESSFUL
-Total time: 0 seconds
-duanp-m02:moose duanp$ java -jar HelloWorld.jar
-Hello, moose!
-```
+Java project management tool: Ant uasage examples, refer to [USAGE](ant-preject/USAGE.md)
 
 ## Maven build java
 
-For maven uasage examples, refer to [USAGE](USAGE.md)
-
-## Reference
-
-* [Apply Ant in Java project][ref1]
-
-[ref1]:https://www.cnblogs.com/Donnnnnn/p/7498224.html
+Java project management tool: Maven uasage examples, refer to [USAGE](maven-preject/USAGE.md)
