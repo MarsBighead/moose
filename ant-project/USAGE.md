@@ -1,4 +1,4 @@
-# Build with ant
+# Usage of Ant
 
 ```shell
 duanp-m02:ant-project duanp$ ant compile
