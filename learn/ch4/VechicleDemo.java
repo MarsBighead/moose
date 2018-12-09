@@ -7,6 +7,11 @@ class Vechicle {
 		//System.out.println("Range is " + fuelcap * mpg);
 		return fuelcap * mpg;
 	}
+
+	//Compute fuel needed for a give distance.
+	double fuelneeded(int miles){
+		return (double) miles/mpg;
+	}
 }
 
 class VechicleDemo {
@@ -14,6 +19,7 @@ class VechicleDemo {
 		Vechicle minivan = new Vechicle();
 		Vechicle sportcar = new Vechicle();
 
+		int dist = 252;
 		minivan.passengeers = 7;
 		minivan.fuelcap = 16;
 		minivan.mpg =21;
@@ -24,8 +30,16 @@ class VechicleDemo {
 
 		System.out.println("Minivan can carry "+ minivan.passengeers + 
 				" with range of " + minivan.range() + " miles."); 
+		
+		System.out.println("To go "+ dist + " miles minivan needs " + 
+				minivan.fuelneeded(dist) + " gallons of fuel."); 
+
 		System.out.println("Sportcar can carry "+ sportcar.passengeers + 
 				" with range of " + sportcar.range() + " miles."); 
+		
+		System.out.println("To go "+ dist + " miles minivan needs " + 
+				sportcar.fuelneeded(dist) + " gallons of fuel."); 
+
 
 	}
 }
