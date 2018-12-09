@@ -3,6 +3,11 @@ class Vechicle {
 	int fuelcap;
 	int mpg; // fuel assumption in miles per gallon
 
+	Vechicle(int p, int f, int m) {
+		passengeers = p;
+		fuelcap = f;
+		mpg = m;
+	}
 	int range (){
 		//System.out.println("Range is " + fuelcap * mpg);
 		return fuelcap * mpg;
@@ -16,17 +21,11 @@ class Vechicle {
 
 class VechicleDemo {
 	public static void main(String args[]){
-		Vechicle minivan = new Vechicle();
-		Vechicle sportcar = new Vechicle();
+		Vechicle minivan = new Vechicle(7, 16, 21);
+		Vechicle sportcar = new Vechicle(2, 14, 12);
 
 		int dist = 252;
-		minivan.passengeers = 7;
-		minivan.fuelcap = 16;
-		minivan.mpg =21;
 
-		sportcar.passengeers = 2;
-		sportcar.fuelcap = 14;
-		sportcar.mpg =12;
 
 		System.out.println("Minivan can carry "+ minivan.passengeers + 
 				" with range of " + minivan.range() + " miles."); 
