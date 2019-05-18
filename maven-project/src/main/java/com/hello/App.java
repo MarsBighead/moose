@@ -74,6 +74,8 @@ public class App {
         System.out.println("Phone Numbers:"+contact.getPhoneNumbers()+"\n\n");
         System.out.println("#### getConfig");
         app.getConfig(configPath);
+        Integer xs=contact. getAge();
+        System.out.println("#### xs with blank:"+xs+"|\n");
        
     }
   

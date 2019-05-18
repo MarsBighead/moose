@@ -103,10 +103,19 @@ duanp-m02:mjava duanp$ find . -type f -name "*.jar"
 * Run the App
 
 ```shell
-duanp-m02:classes duanp$ pwd
-/Users/duanp/project/moose/mjava/target/classes
-duanp-m02:classes duanp$ java com.hello.App
-Hello World!
+duanp-a01:maven-project duanp$ pwd
+/Users/duanp/project/moose/maven-project
+duanp-a01:maven-project duanp$ java -jar target/hello-1.0-SNAPSHOT.jar  config/contact.yaml 
+hello, maven!
+#### getContact
+Name: MarsBighead
+Age: 25
+Phone Numbers:[12344897, 18344897]
+
+
+#### getConfig
+Name: MarsBighead
+PhoneNumbers: [12344897, 18344897]
 ```
 
 * Modify the package and re-build
