@@ -24,7 +24,7 @@ public class App {
     public String hello(String name){
         return "hello, "+name +"!";
     }
-
+/*
     @SuppressWarnings ("unchecked")
     public  Contact getContact(String configPath){
         Contact contact=new Contact();
@@ -40,44 +40,41 @@ public class App {
             contact.setAge(age);
             contact.setName(name);
             contact.setPhoneNumbers(phoneNumbers);
-            
+
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return contact;
     }
-    public void getConfig(String configPath) {
-		Constructor constructor = new Constructor(Contact.class);
-		Yaml yaml = new Yaml(constructor);
-        InputStream input=null;
-		try {
-         input= new FileInputStream(new File(configPath));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		Contact data = yaml.loadAs( input, Contact.class );
-		System.out.println("Name: "+data.getName()+"\nPhoneNumbers: "+data.getPhoneNumbers());
-		//System.out.println(yaml.dump( data ));
-	}
+*/
+
     public static void main(String [] args){
         App app=new App();
         System.out.println(app.hello("maven"));
-        String configPath="config/contact.yaml";
-        if (args.length>0){
-            configPath=args[0];
+        Opts opts= new Opts();
+        opts.parse(args);
+        if (opts.getVersion()){
+            System.out.println("hello version 0.0.1");
+            System.exit(0);
         }
-       
-        Contact contact=app.getContact(configPath);
-        System.out.println("#### getContact");
-        System.out.printf("Name: %s\nAge: %d\n",contact.getName(), contact.getAge());
+
+        if (opts.getConfig()!=null){
+            Config config = new Config();
+            config.parse(opts.getConfig());
+            Contact contact= config.getContact();
+            System.out.println("#### getContact");
+            System.out.printf("Name: %s\nAge: %d\n",contact.getName(), contact.getAge());
+        }
+
+        /*
         System.out.println("Phone Numbers:"+contact.getPhoneNumbers()+"\n\n");
         System.out.println("#### getConfig");
         app.getConfig(configPath);
         Integer xs=contact. getAge();
         System.out.println("#### xs with blank:"+xs+"|\n");
+
+        */
        
     }
-  
 }
-
