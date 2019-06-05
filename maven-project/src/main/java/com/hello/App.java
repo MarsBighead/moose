@@ -1,11 +1,6 @@
 package com.hello;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.util.List;
-import java.util.Map;
+
 //import java.util.Arrays;
 //import java.util.LinkedHashMap;
 
@@ -65,6 +60,8 @@ public class App {
             Contact contact= config.getContact();
             System.out.println("#### getContact");
             System.out.printf("Name: %s\nAge: %d\n",contact.getName(), contact.getAge());
+            config.output("output.yaml");
+
         }
 
         /*
