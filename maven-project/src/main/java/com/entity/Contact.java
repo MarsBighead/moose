@@ -6,9 +6,9 @@ import java.util.List;
  * Created by Paul on 2018-11-14.
  */
 public class Contact {
-    private String name;
-    private Integer age;
-    private List<String> phoneNumbers;
+    private String type;
+    private String email;
+    private int number;
 
     /*public Contact(String name, int age, List<String> phoneNumbers) {
         this.name = name;
@@ -16,35 +16,35 @@ public class Contact {
         this.phoneNumbers = phoneNumbers;
     }*/
 
-    public String getName() {
-        return name;
+    public String getType() {
+        return type;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public Integer getAge() {
-        return age;
+    public Integer getNumber() {
+        return number;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+    public String getEmail() {
+        return email;
     }
 
-    public List<String> getPhoneNumbers() {
-        return phoneNumbers;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void setPhoneNumbers(List<String> phoneNumbers) {
-        this.phoneNumbers = phoneNumbers;
-    }
     @Override
     public String toString() {
         return "Contact{" +
-                "age=" + age +
-                ", name='" + name + '\'' +
-                ", phoneNumbers=" + phoneNumbers +
+                ", type='" + type + '\'' +
+                ", numbers=" + number +
+                ", email=" + email +
                 '}';
     }
 }

@@ -1,5 +1,8 @@
-name: MarsBighead
+name: Togerme 
 age: 25
-phoneNumbers: 
-  - 12344897
-  - 18344897
+contacts: 
+  - type: phone
+    number: 12344897
+    email: xyz@localhost
+  - type: email
+    email: hbu@localhost

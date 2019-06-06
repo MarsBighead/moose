@@ -9,6 +9,9 @@ import org.yaml.snakeyaml.Yaml;
 //import org.yaml.snakeyaml.TypeDescription;
 import org.yaml.snakeyaml.constructor.Constructor;
 
+import java.util.List;
+
+import com.entity.Config;
 import com.entity.Contact;
 
 /**
@@ -55,12 +58,14 @@ public class App {
         }
 
         if (opts.getConfig()!=null){
-            Config config = new Config();
-            config.parse(opts.getConfig());
-            Contact contact= config.getContact();
-            System.out.println("#### getContact");
-            System.out.printf("Name: %s\nAge: %d\n",contact.getName(), contact.getAge());
-            config.output("output.yaml");
+            Conf conf = new Conf();
+            conf.parse(opts.getConfig());
+            Config config=conf.getConf();
+            System.out.println("#### getConfig");
+            List<Contact> contacts=config.getContacts();
+            System.out.printf("Name: %s\nAsge: %d\n",config.getName(),config.getAge());
+            System.out.printf("Type: %s\nNumber: %d\n",contacts.get(0).getType(),contacts.get(0).getNumber());
+            conf.output("output.yaml");
 
         }
 
