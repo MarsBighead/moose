@@ -1,5 +1,9 @@
 package com.entity;
 
+import org.yaml.snakeyaml.Yaml;
+import org.yaml.snakeyaml.constructor.Constructor;
+
+import java.io.*;
 import java.util.List;
 
 /**
@@ -15,6 +19,9 @@ public class Config {
         this.age = age;
         this.phoneNumbers = phoneNumbers;
     }*/
+    public static Config parse (String filename) throws FileNotFoundException{
+        return new Yaml(new Constructor(Config.class)).loadAs( new FileInputStream(new File(filename)), Config.class );
+    }
 
     public String getName() {
         return name;
@@ -39,6 +46,26 @@ public class Config {
     public void setContacts(List<Contact> contacts) {
         this.contacts = contacts;
     }
+
+    public void output(String fileName)  {
+        try {
+            System.out.println("#### output to file");
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+            writer.write("name: "+this.getName()+"\n");
+            writer.write("age: "+this.getAge()+"\n");
+            writer.write("contact:\n");
+            for (Contact contact : this.getContacts()) {
+                writer.write("  - type: "+contact.getType()+"\n");
+                writer.write("    number: "+contact.getNumber()+"\n");
+                writer.write("    email: "+contact.getEmail()+"\n");
+            }
+            writer.close();
+        }  catch (IOException e){
+            e.printStackTrace();
+
+        }
+    }
+
     @Override
     public String toString() {
         return "Contact{" +
